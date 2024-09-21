@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Godot节点手册 on Godot Doc</title>
+    <link>https://godotdoc.github.io/docs/nodes/</link>
+    <description>Recent content in Godot节点手册 on Godot Doc</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://godotdoc.github.io/docs/nodes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node2d</title>
+      <link>https://godotdoc.github.io/docs/nodes/node2d/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://godotdoc.github.io/docs/nodes/node2d/</guid>
+      <description>Node2d&#xD;#&#xD;2D 游戏对象，具有变换（位置、旋转、缩放）等基本功能。所有的 2D 节点，包括物理对象和精灵，都继承自 Node2D。可以使用 Node2D 作为父节点来移动、缩放和旋转 2D 项目中的子节点。&#xA;待完善&amp;hellip;</description>
+    </item>
+    <item>
+      <title>TileMapLayer</title>
+      <link>https://godotdoc.github.io/docs/nodes/tilemaplayer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://godotdoc.github.io/docs/nodes/tilemaplayer/</guid>
+      <description>&#xD;TileMapLayer&#xD;#&#xD;TileMapLayer 是 Godot4.3 新增的节点，用于替换旧版本的 TileMap 节点（tilemap已经从4.3开始被废弃）。&#xA;TileMapLayer 与 TileMap 用法上差不多，可以理解为后者是前者的一个集合，也就是 TileMap 有多层，而 TileMapLayer 只有一层。&#xA;TileMap&#xD;#&#xD;</description>
+    </item>
+    <item>
+      <title>Tween</title>
+      <link>https://godotdoc.github.io/docs/nodes/tween/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://godotdoc.github.io/docs/nodes/tween/</guid>
+      <description>Tween&#xD;#&#xD;Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。&#xA;如果笔者想在 Godot 中创建一个动画，可能首先会想到用 AnimationPlayer 或者 AnimatedSprite/2D 来创建，但是这两个必须在编辑器里事先设置好动画。&#xA;对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 Tween 。而且 Tween 更轻量级，性能更好。&#xA;案例&#xD;#&#xD;在此案例中，我们使用 Tween 将下列的序列帧生成动画。&#xA;创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 代码如下：&#xA;func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，这个方法如果不传数字则代表循环无限次 tween.set_loops() # 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充 # self 指的是当前的脚本所属的 sprite2D 节点对象 tween.tween_property(self,&amp;#34;frame&amp;#34;,5,0.3) # 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用 tween.</description>
+    </item>
+  </channel>
+</rss>

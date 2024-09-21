@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tween#Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
+如果笔者想在 Godot 中创建一个动画，可能首先会想到用 AnimationPlayer 或者 AnimatedSprite/2D 来创建，但是这两个必须在编辑器里事先设置好动画。
+对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 Tween 。而且 Tween 更轻量级，性能更好。
+案例#在此案例中，我们使用 Tween 将下列的序列帧生成动画。
+创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 代码如下：
+func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，这个方法如果不传数字则代表循环无限次 tween.set_loops() # 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充 # self 指的是当前的脚本所属的 sprite2D 节点对象 tween.tween_property(self,&#34;frame&#34;,5,0.3) # 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用 tween.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tween/">
+  <meta property="og:site_name" content="Godot Doc">
+  <meta property="og:title" content="Tween">
+  <meta property="og:description" content="Tween#Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
+如果笔者想在 Godot 中创建一个动画，可能首先会想到用 AnimationPlayer 或者 AnimatedSprite/2D 来创建，但是这两个必须在编辑器里事先设置好动画。
+对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 Tween 。而且 Tween 更轻量级，性能更好。
+案例#在此案例中，我们使用 Tween 将下列的序列帧生成动画。
+创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 代码如下：
+func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，这个方法如果不传数字则代表循环无限次 tween.set_loops() # 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充 # self 指的是当前的脚本所属的 sprite2D 节点对象 tween.tween_property(self,&#34;frame&#34;,5,0.3) # 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用 tween.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Tween | Godot Doc</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tween/">
+<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh-cn.search.min.2e117cc0ce03586b7b13d1abc47a53ba793ac6fab7f1613ee9963b6244b14949.js" integrity="sha256-LhF8wM4DWGt7E9GrxHpTunk6xvq38WE&#43;6ZY7YkSxSUk=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Godot Doc</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="" aria-label="" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5dd6abe01215964a38d75b23e0abd838" class="toggle"  />
+    <label for="section-5dd6abe01215964a38d75b23e0abd838" class="flex justify-between">
+      <a href="/docs/godot/" class="">Godot 入门</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/godot/environment/" class="">GodotEngine 安装</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/godot/basic_grammar/" class="">GDScript 语法参考</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2b5eb011fd220a11bd177baadd13eae6" class="toggle"  />
+    <label for="section-2b5eb011fd220a11bd177baadd13eae6" class="flex justify-between">
+      <a href="/docs/tips/" class="">Godot 小技巧</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/pixel_game_setting/" class="">像素风格游戏配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2b3a913bf25a085cf6a68c187f800ffe" class="toggle"  />
+    <label for="section-2b3a913bf25a085cf6a68c187f800ffe" class="flex justify-between">
+      <a href="/docs/case/" class="">Godot 游戏案例</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/case/platform_jump/" class="">平台跳跃游戏</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/nodes/" class="">Godot节点手册</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/node2d/" class="">Node2d</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tween/" class="active">Tween</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Tween</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#案例">案例</a></li>
+    <li><a href="#参考">参考</a>
+      <ul>
+        <li><a href="#移动动画">移动动画</a></li>
+        <li><a href="#旋转动画">旋转动画</a></li>
+        <li><a href="#淡入淡出动画">淡入淡出动画</a></li>
+        <li><a href="#方法调用">方法调用</a></li>
+        <li><a href="#动画结束回调函数">动画结束回调函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考及资源">参考及资源</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="tween">
+  Tween
+  <a class="anchor" href="#tween">#</a>
+</h1>
+<p><code>Tween</code>【/twiːn/ 在……之间】是用于创建“<strong>补间动画</strong>”的类。</p>
+<p>如果笔者想在 Godot 中创建一个动画，可能首先会想到用 <code>AnimationPlayer</code> 或者 <code>AnimatedSprite/2D</code> 来创建，但是这两个必须在编辑器里事先设置好动画。</p>
+<p>对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 <code>Tween</code> 。而且 <code>Tween</code> 更轻量级，性能更好。</p>
+<h2 id="案例">
+  案例
+  <a class="anchor" href="#%e6%a1%88%e4%be%8b">#</a>
+</h2>
+<p>在此案例中，我们使用 <code>Tween</code> 将下列的序列帧生成动画。</p>
+<p><img src="/images/nodes/adventurer-run3-sword-Sheet.png" alt="图片" /></p>
+<ol>
+<li>创建 <code>Sprite2D</code> 节点。</li>
+<li>将动画资源设置到 <code>texture</code> 上（这里要把<code>hframes</code>设置成6，图中没体现出来）。</li>
+<li>给 <code>Sprite2D</code> 添加代码。</li>
+<li>在 <code>func _ready():</code> 中编写代码，创建动画。</li>
+</ol>
+<p><img src="/images/nodes/tween_test.png" alt="图片" />
+<img src="/images/nodes/tween_test_code.png" alt="图片" /></p>
+<p>代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 创建 tween</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 设置重复次数，这个方法如果不传数字则代表循环无限次</span>
+</span></span><span style="display:flex;"><span>    tween<span style="color:#f92672">.</span><span style="color:#a6e22e">set_loops</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># self 指的是当前的脚本所属的 sprite2D 节点对象</span>
+</span></span><span style="display:flex;"><span>	tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;frame&#34;</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">0.3</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用</span>
+</span></span><span style="display:flex;"><span>	tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_callback</span>(reset_frame)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将 sprite2D 的 frame 帧属性设置成0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">reset_frame</span>() :
+</span></span><span style="display:flex;"><span>	frame <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h2 id="参考">
+  参考
+  <a class="anchor" href="#%e5%8f%82%e8%80%83">#</a>
+</h2>
+<p>一些用 Tween 实现小动画参考。</p>
+<h3 id="移动动画">
+  移动动画
+  <a class="anchor" href="#%e7%a7%bb%e5%8a%a8%e5%8a%a8%e7%94%bb">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 将节点从当前位置沿 x 轴向左移动 100 个单位。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;position&#34;</span>,self<span style="color:#f92672">.</span>position <span style="color:#f92672">+</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">100</span>,<span style="color:#ae81ff">0</span>),<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 将节点从当前位置沿 y 轴向下移动 100 个单位。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;position&#34;</span>,self<span style="color:#f92672">.</span>position <span style="color:#f92672">+</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">100</span>),<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="旋转动画">
+  旋转动画
+  <a class="anchor" href="#%e6%97%8b%e8%bd%ac%e5%8a%a8%e7%94%bb">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 顺时针旋转 180 度</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;rotation&#34;</span>,<span style="color:#a6e22e">Vector2</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span><span style="color:#a6e22e">angle</span>(),<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 逆时针旋转 180 度</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;rotation&#34;</span>,<span style="color:#f92672">-</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span><span style="color:#a6e22e">angle</span>(),<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><blockquote>
+<p>这里 <code>Vector2(-1,0).angle()</code> 是根据向量计算<strong>角度</strong>。如果使用小数，可能会得到意料之外的结果。</p>
+</blockquote>
+<h3 id="淡入淡出动画">
+  淡入淡出动画
+  <a class="anchor" href="#%e6%b7%a1%e5%85%a5%e6%b7%a1%e5%87%ba%e5%8a%a8%e7%94%bb">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 淡出</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;modulate&#34;</span>,<span style="color:#a6e22e">Color</span><span style="color:#f92672">.</span>TRANSPARENT,<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 1s 淡入</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;modulate&#34;</span>,<span style="color:#a6e22e">Color</span><span style="color:#f92672">.</span>WHITE,<span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h3 id="方法调用">
+  方法调用
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8">#</a>
+</h3>
+<p>可以用 <code>tween</code> 调用方法，补间的值就是函数的传参。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_process</span>(delta):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 按下空格键， tween 会调用 test_func 方法</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 传的 x 参数是 0-1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Input</span><span style="color:#f92672">.</span><span style="color:#a6e22e">is_action_just_pressed</span>(<span style="color:#e6db74">&#34;ui_accept&#34;</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>		tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_method</span>(test_func, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 打印 x</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test_func</span>(x : <span style="color:#66d9ef">float</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">void</span>:
+</span></span><span style="display:flex;"><span>	print(x)
+</span></span></code></pre></div><h3 id="动画结束回调函数">
+  动画结束回调函数
+  <a class="anchor" href="#%e5%8a%a8%e7%94%bb%e7%bb%93%e6%9d%9f%e5%9b%9e%e8%b0%83%e5%87%bd%e6%95%b0">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_process</span>(delta):
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">Input</span><span style="color:#f92672">.</span><span style="color:#a6e22e">is_action_just_pressed</span>(<span style="color:#e6db74">&#34;ui_accept&#34;</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> tween <span style="color:#f92672">=</span> <span style="color:#a6e22e">create_tween</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 1s 向右移动 10个单位</span>
+</span></span><span style="display:flex;"><span>		tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_property</span>(self,<span style="color:#e6db74">&#34;position&#34;</span>,self<span style="color:#f92672">.</span>position <span style="color:#f92672">+</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">0</span>),<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 动画结束调用 tween_finished</span>
+</span></span><span style="display:flex;"><span>		tween<span style="color:#f92672">.</span><span style="color:#a6e22e">tween_callback</span>(tween_finished)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">tween_finished</span>() <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">void</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;tween finished!&#34;</span>)
+</span></span></code></pre></div><h2 id="参考及资源">
+  参考及资源
+  <a class="anchor" href="#%e5%8f%82%e8%80%83%e5%8f%8a%e8%b5%84%e6%ba%90">#</a>
+</h2>
+<p><a href="https://docs.godotengine.org/zh-cn/4.x/classes/class_tween.html">官方教程</a></p>
+<p><a href="https://rvros.itch.io/animated-pixel-hero">像素资源-Animated Pixel Adventurer</a></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+  
+<style>
+  .giscus{
+    border-top: 2px solid #808080b0;
+    padding-top: 15px;
+  }
+</style>
+<script src="https://giscus.app/client.js"
+  data-repo="GodotDoc/godotdoc.github.io"
+  data-repo-id="R_kgDOMxALQw"
+  data-category="General"
+  data-category-id="DIC_kwDOMxALQ84Cibzz"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="0"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="dark"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script></div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#案例">案例</a></li>
+    <li><a href="#参考">参考</a>
+      <ul>
+        <li><a href="#移动动画">移动动画</a></li>
+        <li><a href="#旋转动画">旋转动画</a></li>
+        <li><a href="#淡入淡出动画">淡入淡出动画</a></li>
+        <li><a href="#方法调用">方法调用</a></li>
+        <li><a href="#动画结束回调函数">动画结束回调函数</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考及资源">参考及资源</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

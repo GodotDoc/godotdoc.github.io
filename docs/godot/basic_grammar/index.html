@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GDScript 语法参考#GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
+本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。
+没有特殊说明，下文的代码都是在 func _ready(): 方法中编写的，然后点击右上角可以运行看效果。
+变量#变量是用于存储信息的&quot;容器&quot;，这个&quot;容器&quot;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。
+# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。
+常量#常量是在游戏运行时无法更改的值，使用关键字 const 定义。
+# 常量就是定义了就不能修改的数据&#34;容器&#34; const A = 1 注释#注释是用来给程序员看的&quot;代码&quot;，不会被系统编译，相当于代码的备忘录，使用关键字 #。
+# 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。 var n = 1 const N = 1 从 Godot4.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/godot/basic_grammar/">
+  <meta property="og:site_name" content="Godot Doc">
+  <meta property="og:title" content="GDScript 语法参考">
+  <meta property="og:description" content="GDScript 语法参考#GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
+本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。
+没有特殊说明，下文的代码都是在 func _ready(): 方法中编写的，然后点击右上角可以运行看效果。
+变量#变量是用于存储信息的&#34;容器&#34;，这个&#34;容器&#34;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。
+# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。
+常量#常量是在游戏运行时无法更改的值，使用关键字 const 定义。
+# 常量就是定义了就不能修改的数据&#34;容器&#34; const A = 1 注释#注释是用来给程序员看的&#34;代码&#34;，不会被系统编译，相当于代码的备忘录，使用关键字 #。
+# 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。 var n = 1 const N = 1 从 Godot4.">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>GDScript 语法参考 | Godot Doc</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" >
+<link rel="canonical" href="https://godotdoc.github.io/docs/godot/basic_grammar/">
+<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/zh-cn.search.min.2e117cc0ce03586b7b13d1abc47a53ba793ac6fab7f1613ee9963b6244b14949.js" integrity="sha256-LhF8wM4DWGt7E9GrxHpTunk6xvq38WE&#43;6ZY7YkSxSUk=" crossorigin="anonymous"></script>
+
+  
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Godot Doc</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="" aria-label="" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5dd6abe01215964a38d75b23e0abd838" class="toggle" checked />
+    <label for="section-5dd6abe01215964a38d75b23e0abd838" class="flex justify-between">
+      <a href="/docs/godot/" class="">Godot 入门</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/godot/environment/" class="">GodotEngine 安装</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/godot/basic_grammar/" class="active">GDScript 语法参考</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2b5eb011fd220a11bd177baadd13eae6" class="toggle"  />
+    <label for="section-2b5eb011fd220a11bd177baadd13eae6" class="flex justify-between">
+      <a href="/docs/tips/" class="">Godot 小技巧</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/tips/pixel_game_setting/" class="">像素风格游戏配置</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2b3a913bf25a085cf6a68c187f800ffe" class="toggle"  />
+    <label for="section-2b3a913bf25a085cf6a68c187f800ffe" class="flex justify-between">
+      <a href="/docs/case/" class="">Godot 游戏案例</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/case/platform_jump/" class="">平台跳跃游戏</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="/docs/nodes/" class="">Godot节点手册</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/node2d/" class="">Node2d</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tween/" class="">Tween</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>GDScript 语法参考</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#常量">常量</a></li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#数据类型">数据类型</a>
+      <ul>
+        <li><a href="#数字类型">数字类型</a></li>
+        <li><a href="#字符类型">字符类型</a></li>
+        <li><a href="#布尔类型">布尔类型</a></li>
+        <li><a href="#字典类型">字典类型</a></li>
+        <li><a href="#数组">数组</a></li>
+        <li><a href="#压缩数组">压缩数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#运算">运算</a>
+      <ul>
+        <li><a href="#数值运算">数值运算</a></li>
+      </ul>
+    </li>
+    <li><a href="#枚举">枚举</a></li>
+    <li><a href="#循环语句">循环语句</a></li>
+    <li><a href="#条件语句">条件语句</a></li>
+    <li><a href="#类型转换">类型转换</a></li>
+    <li><a href="#函数方法">函数/方法</a></li>
+    <li><a href="#对象和类">对象和类</a>
+      <ul>
+        <li><a href="#构建函数">构建函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="gdscript-语法参考">
+  GDScript 语法参考
+  <a class="anchor" href="#gdscript-%e8%af%ad%e6%b3%95%e5%8f%82%e8%80%83">#</a>
+</h1>
+<p>GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。</p>
+<blockquote>
+<p>本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。</p>
+</blockquote>
+<p>没有特殊说明，下文的代码都是在 <code>func _ready():</code> 方法中编写的，然后点击右上角可以运行看效果。</p>
+<p><img src="/images/godot-gdscript-ready-test.png" alt="图片" /></p>
+<h2 id="变量">
+  变量
+  <a class="anchor" href="#%e5%8f%98%e9%87%8f">#</a>
+</h2>
+<p>变量是用于存储信息的&quot;容器&quot;，这个&quot;容器&quot;储存的数据可以在游戏运行时随时更改，使用 <code>var</code> 关键定义。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 定义一个叫 n 的变量</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用冒号和数据类型关键字手动声明变量类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n1 : <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可以省略类型关键字，系统会自动推断</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n2 : <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 修改变量值</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>n1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>n2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><blockquote>
+<p>是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。</p>
+</blockquote>
+<h2 id="常量">
+  常量
+  <a class="anchor" href="#%e5%b8%b8%e9%87%8f">#</a>
+</h2>
+<p>常量是在游戏运行时无法更改的值，使用关键字 <code>const</code> 定义。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 常量就是定义了就不能修改的数据&#34;容器&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> A <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="注释">
+  注释
+  <a class="anchor" href="#%e6%b3%a8%e9%87%8a">#</a>
+</h2>
+<p>注释是用来给程序员看的&quot;代码&quot;，不会被系统编译，相当于代码的备忘录，使用关键字 <code>#</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>从 <strong>Godot4.2</strong> 开始，可以使用双井号 <code>##</code> 注释。</p>
+<p>双井号注释被称为&quot;文档注释&quot;，可以像官方注释一样生成代码文档，也可以在检查器(Inspector)中鼠标悬停显示注释内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node2D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 这是个变量的文档注释</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@export</span> <span style="color:#66d9ef">var</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 这是个函数上的文档注释</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test_function</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">pass</span> 
+</span></span></code></pre></div><p><img src="/images/godot-gdscript-comment.png" alt="图片" /></p>
+<h2 id="数据类型">
+  数据类型
+  <a class="anchor" href="#%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">#</a>
+</h2>
+<p>Godot 内置一些数据类型，分为基本数据类型(int、float、String、bool等)和对象数据类型(Dictionary、Array等)。基本数据类型在当作参数传递的时候是&quot;<strong>按值传递</strong>&quot;。对象数据类型在当作参数传递的时候是&quot;<strong>引用传递</strong>&quot;。</p>
+<h3 id="数字类型">
+  数字类型
+  <a class="anchor" href="#%e6%95%b0%e5%ad%97%e7%b1%bb%e5%9e%8b">#</a>
+</h3>
+<h4 id="整数类型">
+  整数类型
+  <a class="anchor" href="#%e6%95%b4%e6%95%b0%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n1 : <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><blockquote>
+<p>int 存储的是 64 位值，等效于 C++ 中的 int64_t</p>
+</blockquote>
+<h4 id="浮点数类型">
+  浮点数类型
+  <a class="anchor" href="#%e6%b5%ae%e7%82%b9%e6%95%b0%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> f <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> f1 :<span style="color:#66d9ef">float</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.2</span>
+</span></span></code></pre></div><blockquote>
+<p>float 存储的是 64 位值，等效于 C++ 中的 double。</p>
+</blockquote>
+<h3 id="字符类型">
+  字符类型
+  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e7%b1%bb%e5%9e%8b">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Godot!&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> s1 : <span style="color:#a6e22e">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Godot!&#34;</span>
+</span></span></code></pre></div><h3 id="布尔类型">
+  布尔类型
+  <a class="anchor" href="#%e5%b8%83%e5%b0%94%e7%b1%bb%e5%9e%8b">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b1 : <span style="color:#66d9ef">bool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><blockquote>
+<p>默认使用 Unicode 字符。</p>
+</blockquote>
+<h3 id="字典类型">
+  字典类型
+  <a class="anchor" href="#%e5%ad%97%e5%85%b8%e7%b1%bb%e5%9e%8b">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> dict  <span style="color:#f92672">=</span>  {<span style="color:#e6db74">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;value&#34;</span>, <span style="color:#ae81ff">2</span>: <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> dict1 : <span style="color:#a6e22e">Dictionary</span> <span style="color:#f92672">=</span> {key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value&#34;</span>, other_key <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 返回该字典中键为 key 的值</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v1 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;key&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v1) <span style="color:#75715e"># 输出 value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果字典中没有名为 key1 的键，返回 null</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v2 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;key1&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v2) <span style="color:#75715e"># 输出 null</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 不存在的时候返回某个默认值</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v3 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;key1&#34;</span>,<span style="color:#e6db74">&#34;default value&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v3) <span style="color:#75715e"># 输出 default value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 合并两个字典</span>
+</span></span><span style="display:flex;"><span>dict<span style="color:#f92672">.</span><span style="color:#a6e22e">merge</span>(dict1) <span style="color:#75715e"># 将 dict1 中的值合并到 dict 中</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v4 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;other_key&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v4) <span style="color:#75715e"># 输出 2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 移除键值</span>
+</span></span><span style="display:flex;"><span>dict<span style="color:#f92672">.</span><span style="color:#a6e22e">erase</span>(<span style="color:#e6db74">&#34;other_key&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v5 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;other_key&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v5) <span style="color:#75715e"># 输出 null</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加键值</span>
+</span></span><span style="display:flex;"><span>dict[<span style="color:#e6db74">&#34;other_key&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;new_value&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v6 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;other_key&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v6) <span style="color:#75715e"># 输出 new_value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新某个键的值</span>
+</span></span><span style="display:flex;"><span>dict[<span style="color:#e6db74">&#34;other_key&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;updated_value&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v7 <span style="color:#f92672">=</span> dict<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#34;other_key&#34;</span>)
+</span></span><span style="display:flex;"><span>print(v7) <span style="color:#75715e"># 输出 updated_value</span>
+</span></span></code></pre></div><blockquote>
+<p>字典的值类型可以是任何类型。</p>
+</blockquote>
+<h3 id="数组">
+  数组
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr1 : <span style="color:#a6e22e">Array</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;string1&#34;</span>,<span style="color:#e6db74">&#34;string2&#34;</span>,<span style="color:#e6db74">&#34;string3&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加值</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[1, 2, 3, 4]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 更新</span>
+</span></span><span style="display:flex;"><span>arr[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#75715e"># 将索引为 0 位置的值改成 -1</span>
+</span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[-1, 2, 3, 4]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取某个位置的值</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> v1 <span style="color:#f92672">=</span> arr[<span style="color:#ae81ff">1</span>] 
+</span></span><span style="display:flex;"><span>print(v1) <span style="color:#75715e"># 输出：2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 移除某个值</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span><span style="color:#a6e22e">remove_at</span>(<span style="color:#ae81ff">0</span>) <span style="color:#75715e"># 移除索引为 0 位置的值</span>
+</span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[2, 3, 4]</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 合并数组</span>
+</span></span><span style="display:flex;"><span>arr<span style="color:#f92672">.</span><span style="color:#a6e22e">append_array</span>(arr1)
+</span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[2, 3, 4, &#34;string1&#34;, &#34;string2&#34;, &#34;string3&#34;]</span>
+</span></span></code></pre></div><h4 id="数组设置类型">
+  数组设置类型
+  <a class="anchor" href="#%e6%95%b0%e7%bb%84%e8%ae%be%e7%bd%ae%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<p>上面的例子可以看出默认的 <code>Array</code> 类型是可以储存不同的数据类型，如果想只存某种类型可以使用“<strong>类型化数组</strong>”。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 只能存 int 类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> a: <span style="color:#a6e22e">Array</span>[<span style="color:#66d9ef">int</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 只能存 Node 类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b: <span style="color:#a6e22e">Array</span>[<span style="color:#a6e22e">Node</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 只能存某种枚举类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> d: <span style="color:#a6e22e">Array</span>[MyEnum]
+</span></span></code></pre></div><blockquote>
+<p>Array 等价于 Array[Varaint]</p>
+</blockquote>
+<h3 id="压缩数组">
+  压缩数组
+  <a class="anchor" href="#%e5%8e%8b%e7%bc%a9%e6%95%b0%e7%bb%84">#</a>
+</h3>
+<p>如果读者需要使用数组存储较多的值（数万个），建议使用<strong>压缩数组</strong>。<strong>压缩数组</strong>可以避免了内存碎片，从而降低内存的使用量。但是<strong>压缩数组</strong>比普通的数组性能要低一点，所以不建议在使用小数据集的时候使用<strong>压缩数据</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr : <span style="color:#a6e22e">PackedInt64Array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[1, 2, 3]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr1 : <span style="color:#a6e22e">PackedStringArray</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;string1&#34;</span>,<span style="color:#e6db74">&#34;string2&#34;</span>,<span style="color:#e6db74">&#34;string3&#34;</span>]
+</span></span><span style="display:flex;"><span>print(arr1) <span style="color:#75715e"># 输出：[&#34;string1&#34;, &#34;string2&#34;, &#34;string3&#34;]</span>
+</span></span></code></pre></div><ul>
+<li>PackedByteArray：字节（从 0 到 255 的整数）数组。</li>
+<li>PackedInt32Array：32位整数数组。</li>
+<li>PackedInt64Array：64位整数数组。</li>
+<li>PackedFloat32Array：32位浮点数数组。</li>
+<li>PackedFloat64Array：64位浮点数数组。</li>
+<li>PackedStringArray：字符串数组。</li>
+<li>PackedVector2Array：Vector2 类型的数组。</li>
+<li>PackedVector3Array：Vector3 类型的数组。</li>
+<li>PackedColorArray：Color 类型的数组。</li>
+</ul>
+<h2 id="运算">
+  运算
+  <a class="anchor" href="#%e8%bf%90%e7%ae%97">#</a>
+</h2>
+<h3 id="数值运算">
+  数值运算
+  <a class="anchor" href="#%e6%95%b0%e5%80%bc%e8%bf%90%e7%ae%97">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n3 <span style="color:#f92672">=</span> n1 <span style="color:#f92672">+</span> n2
+</span></span><span style="display:flex;"><span>print(n3) <span style="color:#75715e"># 输出 3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 减</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n4 <span style="color:#f92672">=</span> n1 <span style="color:#f92672">-</span> n2
+</span></span><span style="display:flex;"><span>print(n4) <span style="color:#75715e"># 输出 -1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 乘</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n5 <span style="color:#f92672">=</span> n1 <span style="color:#f92672">*</span> n2
+</span></span><span style="display:flex;"><span>print(n5) <span style="color:#75715e"># 输出 2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 除</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n6 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>
+</span></span><span style="display:flex;"><span>print(n6) <span style="color:#75715e"># 输出 0.5</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 取余</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> n7 <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>print(n7) <span style="color:#75715e"># 输出 1</span>
+</span></span></code></pre></div><h2 id="枚举">
+  枚举
+  <a class="anchor" href="#%e6%9e%9a%e4%b8%be">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node2D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 匿名枚举类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 一个名称为 Name 的枚举</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">enum</span> Name {THING_1, THING_2, ANOTHER_THING <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	print(UNIT_NEUTRAL) <span style="color:#75715e"># 输出：0</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	print(Name<span style="color:#f92672">.</span>THING_1) <span style="color:#75715e"># 输出：0</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	print(Name<span style="color:#f92672">.</span>ANOTHER_THING) <span style="color:#75715e"># 输出：-1</span>
+</span></span></code></pre></div><blockquote>
+<p>枚举类型实际上存的的是就是数字类型，一些地方使用枚举类型可以提高性能和可维护性。</p>
+</blockquote>
+<h2 id="循环语句">
+  循环语句
+  <a class="anchor" href="#%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5">#</a>
+</h2>
+<h2 id="条件语句">
+  条件语句
+  <a class="anchor" href="#%e6%9d%a1%e4%bb%b6%e8%af%ad%e5%8f%a5">#</a>
+</h2>
+<h2 id="类型转换">
+  类型转换
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2">#</a>
+</h2>
+<h2 id="函数方法">
+  函数/方法
+  <a class="anchor" href="#%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95">#</a>
+</h2>
+<h2 id="对象和类">
+  对象和类
+  <a class="anchor" href="#%e5%af%b9%e8%b1%a1%e5%92%8c%e7%b1%bb">#</a>
+</h2>
+<h3 id="构建函数">
+  构建函数
+  <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e5%87%bd%e6%95%b0">#</a>
+</h3>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+  
+<style>
+  .giscus{
+    border-top: 2px solid #808080b0;
+    padding-top: 15px;
+  }
+</style>
+<script src="https://giscus.app/client.js"
+  data-repo="GodotDoc/godotdoc.github.io"
+  data-repo-id="R_kgDOMxALQw"
+  data-category="General"
+  data-category-id="DIC_kwDOMxALQ84Cibzz"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="0"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="dark"
+  data-lang="zh-CN"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script></div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#变量">变量</a></li>
+    <li><a href="#常量">常量</a></li>
+    <li><a href="#注释">注释</a></li>
+    <li><a href="#数据类型">数据类型</a>
+      <ul>
+        <li><a href="#数字类型">数字类型</a></li>
+        <li><a href="#字符类型">字符类型</a></li>
+        <li><a href="#布尔类型">布尔类型</a></li>
+        <li><a href="#字典类型">字典类型</a></li>
+        <li><a href="#数组">数组</a></li>
+        <li><a href="#压缩数组">压缩数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#运算">运算</a>
+      <ul>
+        <li><a href="#数值运算">数值运算</a></li>
+      </ul>
+    </li>
+    <li><a href="#枚举">枚举</a></li>
+    <li><a href="#循环语句">循环语句</a></li>
+    <li><a href="#条件语句">条件语句</a></li>
+    <li><a href="#类型转换">类型转换</a></li>
+    <li><a href="#函数方法">函数/方法</a></li>
+    <li><a href="#对象和类">对象和类</a>
+      <ul>
+        <li><a href="#构建函数">构建函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

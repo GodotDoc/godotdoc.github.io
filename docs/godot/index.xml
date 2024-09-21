@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Godot 入门 on Godot Doc</title>
+    <link>https://godotdoc.github.io/docs/godot/</link>
+    <description>Recent content in Godot 入门 on Godot Doc</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="https://godotdoc.github.io/docs/godot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GodotEngine 安装</title>
+      <link>https://godotdoc.github.io/docs/godot/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://godotdoc.github.io/docs/godot/environment/</guid>
+      <description>安装运行环境&#xD;#&#xD;工欲善其事必先利其器 ，学习 Godot 要先安装 Godot 游戏引擎。&#xA;下载引擎&#xD;#&#xD;进入GodotEngine 官网&#xA;你要使用最新版的就点击 Download Latest，要使用以前的版本就点击 previous version。&#xA;下载 Godot 4.0&#xD;#&#xD;写此文的时候（2024-09-01）官方已经发布了 Godot4.3，但是本文将使用 Godot4.0 版本演示。读者可以根据自己的爱好选择版本，只要是 4.x 的版本在 GDScript 的使用上差别都不是特别大。&#xA;如果你是新手，那么建议使用 4.x 以及以上的最新版本，如果你习惯使用 3.x 版本，那么你已经是老手，本文将会浪费你的宝贵时间。&#xA;这里我们选择 Standard 标准版，如果是用 C# 开发的需要选择 .NET 版本。&#xA;打开 Godot 4.0 新建项目&#xD;#&#xD;如果你是 windows 平台，将下载的压缩包解压后会看到两个文件。Godot_v4.0-stable_win64.exe 和 Godot_v4.0-stable_win64_console.exe，不用管其他的双击前者打开 Godot 引擎就行了（甚至不用安装），然后新建个项目名称随意。&#xA;新建项目上方可以选择语言，如果默认不是中文可以在这里调整。 项目路径最好选择一个空的路径上没有中文和特殊字符的文件夹。 渲染器那三个选项可以默认的学习 GDScript 不用关心这个。 新建节点和脚本文件&#xD;#&#xD;新建完项目会自动打开，点击左侧的 2D 场景，新建一个写代码用的测试场景。&#xA;在刚新建的 2D 场景上添加一个脚本，用于编写测试脚本。&#xA;创建完成后会自动跳转到脚本编辑页面（此时还是未保存状态，可以按ctrl + s保存）。</description>
+    </item>
+    <item>
+      <title>GDScript 语法参考</title>
+      <link>https://godotdoc.github.io/docs/godot/basic_grammar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://godotdoc.github.io/docs/godot/basic_grammar/</guid>
+      <description>GDScript 语法参考&#xD;#&#xD;GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。&#xA;本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。&#xA;没有特殊说明，下文的代码都是在 func _ready(): 方法中编写的，然后点击右上角可以运行看效果。&#xA;变量&#xD;#&#xD;变量是用于存储信息的&amp;quot;容器&amp;quot;，这个&amp;quot;容器&amp;quot;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。&#xA;# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。&#xA;常量&#xD;#&#xD;常量是在游戏运行时无法更改的值，使用关键字 const 定义。&#xA;# 常量就是定义了就不能修改的数据&amp;#34;容器&amp;#34; const A = 1 注释&#xD;#&#xD;注释是用来给程序员看的&amp;quot;代码&amp;quot;，不会被系统编译，相当于代码的备忘录，使用关键字 #。&#xA;# 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。 var n = 1 const N = 1 从 Godot4.</description>
+    </item>
+  </channel>
+</rss>
