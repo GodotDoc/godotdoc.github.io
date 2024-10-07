@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tween#Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
+<meta name="description" content="
+  Tween
+  #
+
+Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
 如果笔者想在 Godot 中创建一个动画，可能首先会想到用 AnimationPlayer 或者 AnimatedSprite/2D 来创建，但是这两个必须在编辑器里事先设置好动画。
 对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 Tween 。而且 Tween 更轻量级，性能更好。
-案例#在此案例中，我们使用 Tween 将下列的序列帧生成动画。
-创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 代码如下：
-func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，这个方法如果不传数字则代表循环无限次 tween.set_loops() # 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充 # self 指的是当前的脚本所属的 sprite2D 节点对象 tween.tween_property(self,&#34;frame&#34;,5,0.3) # 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用 tween.">
+
+  案例
+  #
+
+在此案例中，我们使用 Tween 将下列的序列帧生成动画。
+
+
+创建 Sprite2D 节点。
+将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。
+给 Sprite2D 添加代码。
+在 func _ready(): 中编写代码，创建动画。
+
+
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tween/">
   <meta property="og:site_name" content="Godot Doc">
   <meta property="og:title" content="Tween">
-  <meta property="og:description" content="Tween#Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
+  <meta property="og:description" content="Tween#Tween【/twiːn/ 在……之间】是用于创建“补间动画”的类。
 如果笔者想在 Godot 中创建一个动画，可能首先会想到用 AnimationPlayer 或者 AnimatedSprite/2D 来创建，但是这两个必须在编辑器里事先设置好动画。
 对于一些未知的动画，需要在代码中创建的简单动画，就可以使用 Tween 。而且 Tween 更轻量级，性能更好。
 案例#在此案例中，我们使用 Tween 将下列的序列帧生成动画。
-创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 代码如下：
-func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，这个方法如果不传数字则代表循环无限次 tween.set_loops() # 将 sprite2D 的 frame 从默认值（0）变成 5，中间的 1，2，3，4 由 tween 自动补充 # self 指的是当前的脚本所属的 sprite2D 节点对象 tween.tween_property(self,&#34;frame&#34;,5,0.3) # 上面的动画播放完，调用 reset_frame 将 frame 设置成0，供下次循环使用 tween.">
+创建 Sprite2D 节点。 将动画资源设置到 texture 上（这里要把hframes设置成6，图中没体现出来）。 给 Sprite2D 添加代码。 在 func _ready(): 中编写代码，创建动画。 ">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -27,12 +41,9 @@ func _ready(): # 创建 tween var tween = create_tween() # 设置重复次数，
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tween/">
-<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh-cn.search.min.2e117cc0ce03586b7b13d1abc47a53ba793ac6fab7f1613ee9963b6244b14949.js" integrity="sha256-LhF8wM4DWGt7E9GrxHpTunk6xvq38WE&#43;6ZY7YkSxSUk=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -226,7 +237,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/nodes/tilemap/" class="">TileMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tileset/" class="">TileSet</a>
   
 
         </li>

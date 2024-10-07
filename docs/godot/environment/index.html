@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="安装运行环境#工欲善其事必先利其器 ，学习 Godot 要先安装 Godot 游戏引擎。
-下载引擎#进入GodotEngine 官网
+<meta name="description" content="
+  安装运行环境
+  #
+
+工欲善其事必先利其器 ，学习 Godot 要先安装 Godot 游戏引擎。
+
+  下载引擎
+  #
+
+进入GodotEngine 官网
+
 你要使用最新版的就点击 Download Latest，要使用以前的版本就点击 previous version。
-下载 Godot 4.0#写此文的时候（2024-09-01）官方已经发布了 Godot4.3，但是本文将使用 Godot4.0 版本演示。读者可以根据自己的爱好选择版本，只要是 4.x 的版本在 GDScript 的使用上差别都不是特别大。
-如果你是新手，那么建议使用 4.x 以及以上的最新版本，如果你习惯使用 3.x 版本，那么你已经是老手，本文将会浪费你的宝贵时间。
-这里我们选择 Standard 标准版，如果是用 C# 开发的需要选择 .NET 版本。
-打开 Godot 4.0 新建项目#如果你是 windows 平台，将下载的压缩包解压后会看到两个文件。Godot_v4.0-stable_win64.exe 和 Godot_v4.0-stable_win64_console.exe，不用管其他的双击前者打开 Godot 引擎就行了（甚至不用安装），然后新建个项目名称随意。
-新建项目上方可以选择语言，如果默认不是中文可以在这里调整。 项目路径最好选择一个空的路径上没有中文和特殊字符的文件夹。 渲染器那三个选项可以默认的学习 GDScript 不用关心这个。 新建节点和脚本文件#新建完项目会自动打开，点击左侧的 2D 场景，新建一个写代码用的测试场景。
-在刚新建的 2D 场景上添加一个脚本，用于编写测试脚本。
-创建完成后会自动跳转到脚本编辑页面（此时还是未保存状态，可以按ctrl &#43; s保存）。">
+
+  下载 Godot 4.0
+  #
+
+写此文的时候（2024-09-01）官方已经发布了 Godot4.3，但是本文将使用 Godot4.0 版本演示。读者可以根据自己的爱好选择版本，只要是 4.x 的版本在 GDScript 的使用上差别都不是特别大。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/godot/environment/">
   <meta property="og:site_name" content="Godot Doc">
   <meta property="og:title" content="GodotEngine 安装">
-  <meta property="og:description" content="安装运行环境#工欲善其事必先利其器 ，学习 Godot 要先安装 Godot 游戏引擎。
+  <meta property="og:description" content="安装运行环境#工欲善其事必先利其器 ，学习 Godot 要先安装 Godot 游戏引擎。
 下载引擎#进入GodotEngine 官网
 你要使用最新版的就点击 Download Latest，要使用以前的版本就点击 previous version。
-下载 Godot 4.0#写此文的时候（2024-09-01）官方已经发布了 Godot4.3，但是本文将使用 Godot4.0 版本演示。读者可以根据自己的爱好选择版本，只要是 4.x 的版本在 GDScript 的使用上差别都不是特别大。
-如果你是新手，那么建议使用 4.x 以及以上的最新版本，如果你习惯使用 3.x 版本，那么你已经是老手，本文将会浪费你的宝贵时间。
-这里我们选择 Standard 标准版，如果是用 C# 开发的需要选择 .NET 版本。
-打开 Godot 4.0 新建项目#如果你是 windows 平台，将下载的压缩包解压后会看到两个文件。Godot_v4.0-stable_win64.exe 和 Godot_v4.0-stable_win64_console.exe，不用管其他的双击前者打开 Godot 引擎就行了（甚至不用安装），然后新建个项目名称随意。
-新建项目上方可以选择语言，如果默认不是中文可以在这里调整。 项目路径最好选择一个空的路径上没有中文和特殊字符的文件夹。 渲染器那三个选项可以默认的学习 GDScript 不用关心这个。 新建节点和脚本文件#新建完项目会自动打开，点击左侧的 2D 场景，新建一个写代码用的测试场景。
-在刚新建的 2D 场景上添加一个脚本，用于编写测试脚本。
-创建完成后会自动跳转到脚本编辑页面（此时还是未保存状态，可以按ctrl &#43; s保存）。">
+下载 Godot 4.0#写此文的时候（2024-09-01）官方已经发布了 Godot4.3，但是本文将使用 Godot4.0 版本演示。读者可以根据自己的爱好选择版本，只要是 4.x 的版本在 GDScript 的使用上差别都不是特别大。">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -35,12 +36,9 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="canonical" href="https://godotdoc.github.io/docs/godot/environment/">
-<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh-cn.search.min.2e117cc0ce03586b7b13d1abc47a53ba793ac6fab7f1613ee9963b6244b14949.js" integrity="sha256-LhF8wM4DWGt7E9GrxHpTunk6xvq38WE&#43;6ZY7YkSxSUk=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -234,7 +232,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/nodes/tilemap/" class="">TileMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tileset/" class="">TileSet</a>
   
 
         </li>

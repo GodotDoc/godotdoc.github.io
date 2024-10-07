@@ -4,30 +4,43 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  TileMapLayer
+  TileSet
   #
 
-TileMapLayer 是 Godot4.3 新增的节点，用于替换旧版本的 TileMap 节点（tilemap已经从4.3开始被废弃）。
-TileMapLayer 与 TileMap 用法上差不多，可以理解为后者是前者的一个集合，也就是 TileMap 有多层，而 TileMapLayer 只有一层。
+TileSet 是一个图块集，也就是能放置到 TileMap (或者TileMapLayer)上的图块的集合。
+创建 TileSet 可以借助 TileMap 的检查器窗口。
 
-  TileMap
+如果想要重复使用，可以点击 TileSet 那行最右边的向下的小三角点击“保存”，下次别的TileMap使用的时候点击加载就行了。
+
+
+  设置 TileSet 属性
   #
+
+创建完 TileSet 有几个基本属性
+
+Tile Shape ：每个图块单元的形状，默认的是 Square(正方形)。还有其他形状，比如：Isometric(等角)、Hexagon(五边型)等。
+Tile Layout：图块的布局方式。
+Tile Offset Axis：图块偏移轴，可以水平偏移或者垂直偏移。
+Tile Size ： 每个图块的大小，这个一般跟 TileMap 的 cell quadrant size 属性一样。
+
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tilemaplayer/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tileset/">
   <meta property="og:site_name" content="Godot Doc">
-  <meta property="og:title" content="TileMapLayer">
-  <meta property="og:description" content="TileMapLayer#TileMapLayer 是 Godot4.3 新增的节点，用于替换旧版本的 TileMap 节点（tilemap已经从4.3开始被废弃）。
-TileMapLayer 与 TileMap 用法上差不多，可以理解为后者是前者的一个集合，也就是 TileMap 有多层，而 TileMapLayer 只有一层。
-TileMap#">
+  <meta property="og:title" content="TileSet">
+  <meta property="og:description" content="TileSet#TileSet 是一个图块集，也就是能放置到 TileMap (或者TileMapLayer)上的图块的集合。
+创建 TileSet 可以借助 TileMap 的检查器窗口。
+如果想要重复使用，可以点击 TileSet 那行最右边的向下的小三角点击“保存”，下次别的TileMap使用的时候点击加载就行了。
+设置 TileSet 属性#创建完 TileSet 有几个基本属性
+Tile Shape ：每个图块单元的形状，默认的是 Square(正方形)。还有其他形状，比如：Isometric(等角)、Hexagon(五边型)等。 Tile Layout：图块的布局方式。 Tile Offset Axis：图块偏移轴，可以水平偏移或者垂直偏移。 Tile Size ： 每个图块的大小，这个一般跟 TileMap 的 cell quadrant size 属性一样。 ">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>TileMapLayer | Godot Doc</title>
+<title>TileSet | Godot Doc</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tilemaplayer/">
+<link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tileset/">
 <link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
@@ -237,7 +250,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/nodes/tilemaplayer/" class="active">TileMapLayer</a>
+    <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
   
 
         </li>
@@ -250,7 +263,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/nodes/tileset/" class="">TileSet</a>
+    <a href="/docs/nodes/tileset/" class="active">TileSet</a>
   
 
         </li>
@@ -310,7 +323,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>TileMapLayer</strong>
+  <strong>TileSet</strong>
 
   <label for="toc-control">
     
@@ -326,7 +339,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tilemap">TileMap</a></li>
+    <li><a href="#设置-tileset-属性">设置 TileSet 属性</a></li>
+    <li><a href="#设置-tileset-图块">设置 TileSet 图块</a></li>
   </ul>
 </nav>
 
@@ -339,16 +353,34 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="tilemaplayer">
-  TileMapLayer
-  <a class="anchor" href="#tilemaplayer">#</a>
+  <article class="markdown book-article"><h1 id="tileset">
+  TileSet
+  <a class="anchor" href="#tileset">#</a>
 </h1>
-<p><a href="https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html"><strong>TileMapLayer</strong></a> 是 Godot4.3 新增的节点，用于替换旧版本的 <a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html"><strong>TileMap</strong></a> 节点（tilemap已经从4.3开始被废弃）。</p>
-<p><strong>TileMapLayer</strong> 与 <strong>TileMap</strong> 用法上差不多，可以理解为后者是前者的一个集合，也就是 <strong>TileMap</strong> 有多层，而 <strong>TileMapLayer</strong> 只有一层。</p>
-<h2 id="tilemap">
-  TileMap
-  <a class="anchor" href="#tilemap">#</a>
+<p><code>TileSet</code> 是一个<strong>图块集</strong>，也就是能放置到 <code>TileMap</code> (或者<code>TileMapLayer</code>)上的图块的集合。</p>
+<p>创建 <code>TileSet</code> 可以借助 <code>TileMap</code> 的检查器窗口。</p>
+<p><img src="/images/nodes/tileset_create.png" alt="图片" /></p>
+<p>如果想要重复使用，可以点击 TileSet 那行最右边的向下的小三角点击“保存”，下次别的TileMap使用的时候点击加载就行了。</p>
+<p><img src="/images/nodes/tileset_create_save.png" alt="图片" /></p>
+<h2 id="设置-tileset-属性">
+  设置 TileSet 属性
+  <a class="anchor" href="#%e8%ae%be%e7%bd%ae-tileset-%e5%b1%9e%e6%80%a7">#</a>
 </h2>
+<p>创建完 TileSet 有几个基本属性</p>
+<ul>
+<li>Tile Shape ：每个图块单元的形状，默认的是 Square(正方形)。还有其他形状，比如：Isometric(等角)、Hexagon(五边型)等。</li>
+<li>Tile Layout：图块的布局方式。</li>
+<li>Tile Offset Axis：图块偏移轴，可以水平偏移或者垂直偏移。</li>
+<li>Tile Size ： 每个图块的大小，这个一般跟 <code>TileMap</code> 的 <code>cell quadrant size</code> 属性一样。</li>
+</ul>
+<p><img src="/images/nodes/tileset_properties.png" alt="图片" /></p>
+<h2 id="设置-tileset-图块">
+  设置 TileSet 图块
+  <a class="anchor" href="#%e8%ae%be%e7%bd%ae-tileset-%e5%9b%be%e5%9d%97">#</a>
+</h2>
+<p>点击新建的 TileSet（1） 会在下面出现个设置图块的窗口（2）。将准备好的图块资源拖拽到图块窗口中（3）。</p>
+<p><img src="/images/nodes/tileset_set.png" alt="图片" /></p>
+<p>如上图， TileSet 已经将 icon.svg 平均分成 16x16 大小的图块，然后我们就可以单独的将这些图块放到 TileMap 上了。</p>
 </article>
  
       
@@ -412,7 +444,8 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tilemap">TileMap</a></li>
+    <li><a href="#设置-tileset-属性">设置 TileSet 属性</a></li>
+    <li><a href="#设置-tileset-图块">设置 TileSet 图块</a></li>
   </ul>
 </nav>
 

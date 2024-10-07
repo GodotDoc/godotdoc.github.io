@@ -4,30 +4,40 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
-  TileMapLayer
-  #
-
-TileMapLayer 是 Godot4.3 新增的节点，用于替换旧版本的 TileMap 节点（tilemap已经从4.3开始被废弃）。
-TileMapLayer 与 TileMap 用法上差不多，可以理解为后者是前者的一个集合，也就是 TileMap 有多层，而 TileMapLayer 只有一层。
-
   TileMap
   #
+
+TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
+TileMap 需要内嵌一个 TileSet（见 TileSet 章节），可以理解为 TileMap 是一张画纸而 TileSet 是一个画笔，而在 TileSet 中添加的图集资源可以理解为颜料。
+
+  使用 TileMap
+  #
+
+给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。
+设置 TileSet ：
+
+1、添加 TileSet。
+2、打开 TileSet 窗口，编辑 TileSet。
+3、导入图集资源。
+
 ">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tilemaplayer/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tilemap/">
   <meta property="og:site_name" content="Godot Doc">
-  <meta property="og:title" content="TileMapLayer">
-  <meta property="og:description" content="TileMapLayer#TileMapLayer 是 Godot4.3 新增的节点，用于替换旧版本的 TileMap 节点（tilemap已经从4.3开始被废弃）。
-TileMapLayer 与 TileMap 用法上差不多，可以理解为后者是前者的一个集合，也就是 TileMap 有多层，而 TileMapLayer 只有一层。
-TileMap#">
+  <meta property="og:title" content="TileMap">
+  <meta property="og:description" content="TileMap#TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
+TileMap 需要内嵌一个 TileSet（见 TileSet 章节），可以理解为 TileMap 是一张画纸而 TileSet 是一个画笔，而在 TileSet 中添加的图集资源可以理解为颜料。
+使用 TileMap#给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。
+设置 TileSet ：
+1、添加 TileSet。 2、打开 TileSet 窗口，编辑 TileSet。 3、导入图集资源。 ">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-<title>TileMapLayer | Godot Doc</title>
+<title>TileMap | Godot Doc</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
-<link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tilemaplayer/">
+<link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tilemap/">
 <link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
@@ -224,7 +234,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/nodes/tilemap/" class="">TileMap</a>
+    <a href="/docs/nodes/tilemap/" class="active">TileMap</a>
   
 
         </li>
@@ -237,7 +247,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/nodes/tilemaplayer/" class="active">TileMapLayer</a>
+    <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
   
 
         </li>
@@ -310,7 +320,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>TileMapLayer</strong>
+  <strong>TileMap</strong>
 
   <label for="toc-control">
     
@@ -326,7 +336,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tilemap">TileMap</a></li>
+    <li><a href="#使用-tilemap">使用 TileMap</a>
+      <ul>
+        <li><a href="#tilemap-绘制工具">TileMap 绘制工具</a></li>
+        <li><a href="#tilemap-多层">TileMap 多层</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -339,16 +354,48 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown book-article"><h1 id="tilemaplayer">
-  TileMapLayer
-  <a class="anchor" href="#tilemaplayer">#</a>
-</h1>
-<p><a href="https://docs.godotengine.org/en/stable/classes/class_tilemaplayer.html"><strong>TileMapLayer</strong></a> 是 Godot4.3 新增的节点，用于替换旧版本的 <a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilemaps.html"><strong>TileMap</strong></a> 节点（tilemap已经从4.3开始被废弃）。</p>
-<p><strong>TileMapLayer</strong> 与 <strong>TileMap</strong> 用法上差不多，可以理解为后者是前者的一个集合，也就是 <strong>TileMap</strong> 有多层，而 <strong>TileMapLayer</strong> 只有一层。</p>
-<h2 id="tilemap">
+  <article class="markdown book-article"><h1 id="tilemap">
   TileMap
   <a class="anchor" href="#tilemap">#</a>
+</h1>
+<p><code>TileMap</code> 是用户创建游戏布局的图块网格。相比使用大量的 <code>Sprite2D</code> 布置场景，使用 <code>TileMap</code> 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。</p>
+<p><code>TileMap</code> 需要内嵌一个 <code>TileSet</code>（见 TileSet 章节），可以理解为 <code>TileMap</code> 是一张画纸而 <code>TileSet</code> 是一个画笔，而在 <code>TileSet</code> 中添加的图集资源可以理解为颜料。</p>
+<h2 id="使用-tilemap">
+  使用 TileMap
+  <a class="anchor" href="#%e4%bd%bf%e7%94%a8-tilemap">#</a>
 </h2>
+<p>给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。</p>
+<p>设置 TileSet ：</p>
+<ul>
+<li>1、添加 TileSet。</li>
+<li>2、打开 TileSet 窗口，编辑 TileSet。</li>
+<li>3、导入图集资源。</li>
+</ul>
+<p><img src="/images/nodes/tileset_set.png" alt="图片" /></p>
+<h3 id="tilemap-绘制工具">
+  TileMap 绘制工具
+  <a class="anchor" href="#tilemap-%e7%bb%98%e5%88%b6%e5%b7%a5%e5%85%b7">#</a>
+</h3>
+<p>点击右下角的 TileMap 打开编辑窗口，使用绘制工具就可以绘制场景了。</p>
+<p>工具栏有几个工具可以方便我们绘制场景。</p>
+<p><img src="/images/nodes/tilemap_tools.png" alt="图片" /></p>
+<ol>
+<li>选择工具，可以框选多个图集（多选）。</li>
+<li>单个绘制工具，在 TileMap 窗口（中下部分）选择你要绘制的图块，在 2D 窗口（中上部分）就可以绘制了。</li>
+<li>直线绘制工具。</li>
+<li>矩形绘制工具。</li>
+<li>填充工具。这个工具会将某个区域填充成同一个图块。</li>
+<li>选择工具。这个工具可以选择某个区域的图块，省的到 TileMap 窗口中选择了。</li>
+<li>清除工具。清除已经绘制的部分。</li>
+<li>随机图块。如果有一个草坪要绘制，然后有多种草的图块样式，就可以使用这个工具，他会随机在 TileMap 上绘制草，水机绘制看上去会更自然。</li>
+</ol>
+<h3 id="tilemap-多层">
+  TileMap 多层
+  <a class="anchor" href="#tilemap-%e5%a4%9a%e5%b1%82">#</a>
+</h3>
+<p><code>TileMap</code> 支持多层，比如一个场景。第一层是土地，第二层是草地，第三层上放置一些时候。</p>
+<p>点击 <code>TileMap</code> ，在右侧的检查器窗口中 layers 属性中<strong>添加元素</strong>。然后再 TileMap 编辑窗口中可以选择不同的图层就可以在相应的图层上绘制了。</p>
+<p><img src="/images/nodes/tilemap_layers.png" alt="图片" /></p>
 </article>
  
       
@@ -412,7 +459,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tilemap">TileMap</a></li>
+    <li><a href="#使用-tilemap">使用 TileMap</a>
+      <ul>
+        <li><a href="#tilemap-绘制工具">TileMap 绘制工具</a></li>
+        <li><a href="#tilemap-多层">TileMap 多层</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

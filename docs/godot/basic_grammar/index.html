@@ -3,27 +3,43 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="GDScript 语法参考#GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
+<meta name="description" content="
+  GDScript 语法参考
+  #
+
+GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
+
 本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。
+
 没有特殊说明，下文的代码都是在 func _ready(): 方法中编写的，然后点击右上角可以运行看效果。
-变量#变量是用于存储信息的&quot;容器&quot;，这个&quot;容器&quot;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。
-# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。
-常量#常量是在游戏运行时无法更改的值，使用关键字 const 定义。
-# 常量就是定义了就不能修改的数据&#34;容器&#34; const A = 1 注释#注释是用来给程序员看的&quot;代码&quot;，不会被系统编译，相当于代码的备忘录，使用关键字 #。
-# 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。 var n = 1 const N = 1 从 Godot4.">
+
+
+  变量
+  #
+
+变量是用于存储信息的&quot;容器&quot;，这个&quot;容器&quot;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。
+# 定义一个叫 n 的变量
+var n = 1
+# 使用冒号和数据类型关键字手动声明变量类型
+var n1 : int = 1
+# 可以省略类型关键字，系统会自动推断
+var n2 : = 1
+
+# 修改变量值
+n = 2
+n1 = 2
+n2 = 2
+">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/godot/basic_grammar/">
   <meta property="og:site_name" content="Godot Doc">
   <meta property="og:title" content="GDScript 语法参考">
-  <meta property="og:description" content="GDScript 语法参考#GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
+  <meta property="og:description" content="GDScript 语法参考#GDScript 的语法很简单，下面通过一些案例帮助读者快速的入门 GDScript。
 本文默认读者至少有少许的编程经验，知道变量、常量、对象和类等词是什么意思。
 没有特殊说明，下文的代码都是在 func _ready(): 方法中编写的，然后点击右上角可以运行看效果。
 变量#变量是用于存储信息的&#34;容器&#34;，这个&#34;容器&#34;储存的数据可以在游戏运行时随时更改，使用 var 关键定义。
-# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 是否声明变量类型根据自己喜好来。笔者觉得声明变量类型使用起来比较方便，不声明类型代码看起来简洁。
-常量#常量是在游戏运行时无法更改的值，使用关键字 const 定义。
-# 常量就是定义了就不能修改的数据&#34;容器&#34; const A = 1 注释#注释是用来给程序员看的&#34;代码&#34;，不会被系统编译，相当于代码的备忘录，使用关键字 #。
-# 这里就是一条注释，可以理解为代码的备忘录，程序运行的时候，会把这行删掉。 var n = 1 const N = 1 从 Godot4.">
+# 定义一个叫 n 的变量 var n = 1 # 使用冒号和数据类型关键字手动声明变量类型 var n1 : int = 1 # 可以省略类型关键字，系统会自动推断 var n2 : = 1 # 修改变量值 n = 2 n1 = 2 n2 = 2 ">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -31,12 +47,9 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="canonical" href="https://godotdoc.github.io/docs/godot/basic_grammar/">
-<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/zh-cn.search.min.2e117cc0ce03586b7b13d1abc47a53ba793ac6fab7f1613ee9963b6244b14949.js" integrity="sha256-LhF8wM4DWGt7E9GrxHpTunk6xvq38WE&#43;6ZY7YkSxSUk=" crossorigin="anonymous"></script>
-
-  
-
+  <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -230,7 +243,33 @@ https://github.com/alex-shpak/hugo-book
   
 
   
+    <a href="/docs/nodes/tilemap/" class="">TileMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
     <a href="/docs/nodes/tilemaplayer/" class="">TileMapLayer</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/nodes/tileset/" class="">TileSet</a>
   
 
         </li>
@@ -326,11 +365,19 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#枚举">枚举</a></li>
     <li><a href="#循环语句">循环语句</a></li>
-    <li><a href="#条件语句">条件语句</a></li>
-    <li><a href="#类型转换">类型转换</a></li>
-    <li><a href="#函数方法">函数/方法</a></li>
-    <li><a href="#对象和类">对象和类</a>
+    <li><a href="#条件语句">条件语句</a>
       <ul>
+        <li><a href="#if-语句">If 语句</a></li>
+        <li><a href="#match-语句">Match 语句</a></li>
+      </ul>
+    </li>
+    <li><a href="#类型转换">类型转换</a></li>
+    <li><a href="#类">类</a></li>
+    <li><a href="#函数方法">函数/方法</a>
+      <ul>
+        <li><a href="#引用函数">引用函数</a></li>
+        <li><a href="#lambda-函数">Lambda 函数</a></li>
+        <li><a href="#静态函数">静态函数</a></li>
         <li><a href="#构建函数">构建函数</a></li>
       </ul>
     </li>
@@ -434,16 +481,16 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Godot!&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> s1 : <span style="color:#a6e22e">String</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello Godot!&#34;</span>
-</span></span></code></pre></div><h3 id="布尔类型">
+</span></span></code></pre></div><blockquote>
+<p>默认使用 Unicode 字符。</p>
+</blockquote>
+<h3 id="布尔类型">
   布尔类型
   <a class="anchor" href="#%e5%b8%83%e5%b0%94%e7%b1%bb%e5%9e%8b">#</a>
 </h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> b1 : <span style="color:#66d9ef">bool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><blockquote>
-<p>默认使用 Unicode 字符。</p>
-</blockquote>
-<h3 id="字典类型">
+</span></span></code></pre></div><h3 id="字典类型">
   字典类型
   <a class="anchor" href="#%e5%ad%97%e5%85%b8%e7%b1%bb%e5%9e%8b">#</a>
 </h3>
@@ -530,7 +577,7 @@ https://github.com/alex-shpak/hugo-book
   压缩数组
   <a class="anchor" href="#%e5%8e%8b%e7%bc%a9%e6%95%b0%e7%bb%84">#</a>
 </h3>
-<p>如果读者需要使用数组存储较多的值（数万个），建议使用<strong>压缩数组</strong>。<strong>压缩数组</strong>可以避免了内存碎片，从而降低内存的使用量。但是<strong>压缩数组</strong>比普通的数组性能要低一点，所以不建议在使用小数据集的时候使用<strong>压缩数据</strong>。</p>
+<p>如果读者需要使用数组存储较多的值（数万个），建议使用<strong>压缩数组</strong>。<strong>压缩数组</strong>可以避免内存碎片，从而降低内存的使用量。但是<strong>压缩数组</strong>比普通的数组性能要低一点，所以不建议小数据集的时候使用<strong>压缩数组</strong>。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr : <span style="color:#a6e22e">PackedInt64Array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
 </span></span><span style="display:flex;"><span>print(arr) <span style="color:#75715e"># 输出：[1, 2, 3]</span>
 </span></span><span style="display:flex;"><span>
@@ -603,22 +650,306 @@ https://github.com/alex-shpak/hugo-book
   循环语句
   <a class="anchor" href="#%e5%be%aa%e7%8e%af%e8%af%ad%e5%8f%a5">#</a>
 </h2>
-<h2 id="条件语句">
+<p>程序中经常会用到迭代一个范围或者一个数组、字典类型的时候。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># for 语句迭代数组</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]:
+</span></span><span style="display:flex;"><span>	print(i)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出 ： </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 1 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 2 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 3 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 4 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for 语句迭代数组</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;h&#39;</span>,<span style="color:#e6db74">&#39;e&#39;</span>,<span style="color:#e6db74">&#39;l&#39;</span>,<span style="color:#e6db74">&#39;l&#39;</span>,<span style="color:#e6db74">&#39;o&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> arr<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span>():
+</span></span><span style="display:flex;"><span>	print(arr[i])
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出：</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># h</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># e</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># l</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># l</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># o</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for 语句迭代字典</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> dic <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;a&#34;</span>: <span style="color:#e6db74">&#34;0&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>: <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>: <span style="color:#e6db74">&#34;2&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> dic:
+</span></span><span style="display:flex;"><span>	print(i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span> <span style="color:#f92672">+</span> dic[i])
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># a=0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># b=1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># c=2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for 语句迭代一定次数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>	print(i)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出 ： </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 0 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 1 </span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 2 </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 其实 range(3) 返回的就是一个有三个元素的（[0,1,2]）的数组</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># range 方法可以有很多玩法，读者感兴趣可以取看下 range 的文档。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># for 语句迭代字符</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> c <span style="color:#f92672">in</span> <span style="color:#e6db74">&#34;hello&#34;</span>:
+</span></span><span style="display:flex;"><span>	print(c)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出：</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># h</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># e</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># l</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># l</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># o</span>
+</span></span></code></pre></div><h2 id="条件语句">
   条件语句
   <a class="anchor" href="#%e6%9d%a1%e4%bb%b6%e8%af%ad%e5%8f%a5">#</a>
 </h2>
-<h2 id="类型转换">
+<p>根据不同的条件执行不同的代码。</p>
+<h3 id="if-语句">
+  If 语句
+  <a class="anchor" href="#if-%e8%af%ad%e5%8f%a5">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># if...else...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x = 1 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x 不等于 1 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># if...elif...</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x = 1 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x 等于 2 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x 不等于 1 且 x 不等于 2 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 类三运算符（这个还是挺常用的）</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1111</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">1111</span>
+</span></span><span style="display:flex;"><span>print(y)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 输出：1111</span>
+</span></span></code></pre></div><h3 id="match-语句">
+  Match 语句
+  <a class="anchor" href="#match-%e8%af%ad%e5%8f%a5">#</a>
+</h3>
+<p>默认情况下 <code>Match</code> 语句按照代码顺序，只要匹配到一个分支，下面分支就不会执行了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 值匹配</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> x:
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x = 1 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x = 2 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;test&#34;</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x = test 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	_:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 这里的 _ 相当于 default(默认值)，只有上面的都没匹配到才会走这里，可以省略。</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;上面都没匹配会执行到这里&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 多重匹配</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> x:
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x 的值是 1或2或3或4&#34;</span>)
+</span></span><span style="display:flex;"><span>	_:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x 不等于 1，2，3，4 中的任何一个&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 类型匹配</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x :<span style="color:#66d9ef">int</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> typeof(x):
+</span></span><span style="display:flex;"><span>	TYPE_INT:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x 是 int 类型的时候执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	TYPE_STRING:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x 是 string 类型的时候执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	TYPE_ARRAY:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x 是数组的时候执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	_:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;上面都没匹配会执行到这里&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 绑定模式</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> x <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> x:
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x = 1 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x = 2 时会执行这里&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> new_x:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 只有上面都没匹配到才会走到这里，并将 x 的值赋给 new_x</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34; new_x 的值为 &#34;</span>,new_x)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 输出：new_x 的值为 3</span>
+</span></span></code></pre></div><p>Match 数组</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>] 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> arr:
+</span></span><span style="display:flex;"><span>	[]:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 当 arr 是空的时候执行这里</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;arr 是空&#34;</span>)
+</span></span><span style="display:flex;"><span>	[<span style="color:#ae81ff">1</span>,<span style="color:#66d9ef">null</span>]:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 当 arr 全等于 [1,null] 的时候执行这里</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;arr = [1,null]&#34;</span>)
+</span></span><span style="display:flex;"><span>	[<span style="color:#66d9ef">var</span> start, _, <span style="color:#e6db74">&#34;test&#34;</span>]:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 当 数组长为 3 ，第二个值为人一直，第三个值为&#34;test&#34;的时候执行这里</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 并且 start 会被复制数组的第一个值</span>
+</span></span><span style="display:flex;"><span>		print(start)
+</span></span><span style="display:flex;"><span>	[<span style="color:#ae81ff">1</span> , <span style="color:#f92672">..</span>]:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 当数组的第一个值是 1 的时候执行这里</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34; arr 的第一个值是 1&#34;</span>)
+</span></span></code></pre></div><p>Match 字典</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> dic <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;zhangsan&#34;</span>,<span style="color:#e6db74">&#34;age&#34;</span>:<span style="color:#ae81ff">11</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">match</span> dic:
+</span></span><span style="display:flex;"><span>	{}:
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;dic 是空的&#34;</span>)
+</span></span><span style="display:flex;"><span>	{<span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#e6db74">&#34;zhangsan&#34;</span>}:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># dic 中只有一个 name 主键，并且对应的值是 zhangsan</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 满足上面条件才会执行这里的代码</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;dic 中 name 的值是 zhangsan&#34;</span>)
+</span></span><span style="display:flex;"><span>	{<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;zhangsan&#34;</span>, <span style="color:#e6db74">&#34;age&#34;</span>: <span style="color:#66d9ef">var</span> age}:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># dic 中只有 name 主键和 age 主键，且 name 对应的值为 zhangsan</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># 满足上面的条件才会执行这里的代码，且 age 的值为 dic 中 age 对应的值</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;dic 中 age 的值是 &#34;</span>,age)
+</span></span><span style="display:flex;"><span>	{<span style="color:#e6db74">&#34;name&#34;</span>, <span style="color:#e6db74">&#34;age&#34;</span>}:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># dic 中只有 name 主键和 age 主键才会执行这里</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;dic 中只含有 name 和 age 两个键值&#34;</span>)
+</span></span><span style="display:flex;"><span>	{<span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;lisi&#34;</span>, <span style="color:#f92672">..</span>}:
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># dic 中只要含有 name 且对应的值为 lisi，才会走这里</span>
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;dic 中 name 的值为 lisi&#34;</span>)
+</span></span></code></pre></div><h2 id="类型转换">
   类型转换
   <a class="anchor" href="#%e7%b1%bb%e5%9e%8b%e8%bd%ac%e6%8d%a2">#</a>
 </h2>
-<h2 id="函数方法">
+<p>如果需要将值强制转换为特定类型，特别是对于对象类型而言需要进行转型，则可以使用强制转型运算符 <code>as</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#75715e"># 创建一个 sprite2D 类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> sprite : <span style="color:#a6e22e">Sprite2D</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Sprite2D</span><span style="color:#f92672">.</span><span style="color:#a6e22e">new</span>()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将上面的 sprite 转换成 Node2D 类型</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> node2d : <span style="color:#a6e22e">Node2D</span> <span style="color:#f92672">=</span> sprite <span style="color:#f92672">as</span> <span style="color:#a6e22e">Node2D</span>
+</span></span></code></pre></div><h2 id="类">
+  类
+  <a class="anchor" href="#%e7%b1%bb">#</a>
+</h2>
+<p>默认情况下，所有脚本文件都是未命名的类，这时只能使用文件的路径来引用这些无名类。</p>
+<p>MyClass.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node</span>
+</span></span></code></pre></div><p>Node2D.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node2D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> myclass <span style="color:#f92672">=</span> load(<span style="color:#e6db74">&#34;res://MyClass.gd&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> myclassObj <span style="color:#f92672">=</span> myclass<span style="color:#f92672">.</span><span style="color:#a6e22e">new</span>()
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;success&#34;</span>)
+</span></span></code></pre></div><p><img src="/images/gdscript/gdscript_class_noname.png" alt="图片" /></p>
+<p>可以通过 <code>class_name</code> 给自定义类起个类名，就可以通过类名创建对象了。</p>
+<p>MyClass.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">class_name</span> <span style="color:#a6e22e">MyClass</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node</span>
+</span></span></code></pre></div><p>Node2D.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node2D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> myclassObj <span style="color:#f92672">=</span> MyClass<span style="color:#f92672">.</span><span style="color:#a6e22e">new</span>()
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;success&#34;</span>)
+</span></span></code></pre></div><h2 id="函数方法">
   函数/方法
   <a class="anchor" href="#%e5%87%bd%e6%95%b0%e6%96%b9%e6%b3%95">#</a>
 </h2>
-<h2 id="对象和类">
-  对象和类
-  <a class="anchor" href="#%e5%af%b9%e8%b1%a1%e5%92%8c%e7%b1%bb">#</a>
-</h2>
+<p>函数始终属于类。查找变量时，函数作用域的查找顺序是：局部 → 类成员 → 全局。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> <span style="color:#a6e22e">my_func</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34; x + y = &#34;</span>,res)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出： x + y = 3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义函数，函数名为 my_func 。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这个函数用于计算 x + y </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_func</span>(x : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><p>上面的 <code>my_func</code> 是有返回值的，有时候需要不需要返回的的函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">my_func</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出： x + y = 3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义函数，函数名为 my_func 。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这个函数用于计算 x + y </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_func</span>(x : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span>) :
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34; x + y = &#34;</span>,res)
+</span></span></code></pre></div><p>参数 <code>x</code> 和 <code>y</code> 可以设置默认值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 此处只传第一个参数， x = 2 ，y 则取的默认值</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">my_func</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出： x + y = 4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义函数，函数名为 my_func 。</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 这个函数用于计算 x + y </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_func</span>(x : <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, y : <span style="color:#66d9ef">int</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) :
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34; x + y = &#34;</span>,res)
+</span></span></code></pre></div><h3 id="引用函数">
+  引用函数
+  <a class="anchor" href="#%e5%bc%95%e7%94%a8%e5%87%bd%e6%95%b0">#</a>
+</h3>
+<p>引用函数就是将一个函数当作参数传给另一个函数，使用关键字 <code>Callable</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> <span style="color:#a6e22e">my_func</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,add_func)
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x + y = &#34;</span>,res)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出： x + y = 3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 自定义函数，函数名为 my_func 。</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_func</span>(x : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span> , other_func : <span style="color:#a6e22e">Callable</span>) :
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 直接调用 Callable 的 call() 方法，而不能直接用 ()</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> other_func<span style="color:#f92672">.</span><span style="color:#a6e22e">call</span>(x,y)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 将这个函数当作参数传给上面那个函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add_func</span>(x : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><h3 id="lambda-函数">
+  Lambda 函数
+  <a class="anchor" href="#lambda-%e5%87%bd%e6%95%b0">#</a>
+</h3>
+<p>lambda 函数可以用来创建不属于类的函数。比如创建一些 <code>Callable</code> 对象并当作参数传给其他函数的时候很有用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 定义lambda 函数</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> lambda_func <span style="color:#f92672">=</span> <span style="color:#66d9ef">func</span> <span style="color:#960050;background-color:#1e0010">(</span><span style="color:#a6e22e">x</span> : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x + y = &#34;</span>,res)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 调用 lambda 函数</span>
+</span></span><span style="display:flex;"><span>	lambda_func<span style="color:#f92672">.</span><span style="color:#a6e22e">call</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出：x + y = 3</span>
+</span></span></code></pre></div><p>也可以个 lambda 函数设置个函数名。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 创建 lambda 函数，并给其设置个名字my_lambda_func</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> lambda_func <span style="color:#f92672">=</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_lambda_func</span> (x : <span style="color:#66d9ef">int</span> , y : <span style="color:#66d9ef">int</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> x <span style="color:#f92672">+</span> y
+</span></span><span style="display:flex;"><span>		print(<span style="color:#e6db74">&#34;x + y = &#34;</span>,res)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 调用 lambda 函数</span>
+</span></span><span style="display:flex;"><span>	lambda_func<span style="color:#f92672">.</span><span style="color:#a6e22e">call</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出：x + y = 3</span>
+</span></span></code></pre></div><blockquote>
+<p>lambda 函数不能是静态函数。</p>
+</blockquote>
+<h3 id="静态函数">
+  静态函数
+  <a class="anchor" href="#%e9%9d%99%e6%80%81%e5%87%bd%e6%95%b0">#</a>
+</h3>
+<p>函数可以声明为静态函数。静态函数不能访问实例成员变量，也不能使用 self，适用于创建辅助函数工具库。</p>
+<p>Utils.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">class_name</span> <span style="color:#a6e22e">Utils</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 静态方法</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">my_sum_func</span>(x : <span style="color:#66d9ef">int</span> , y :<span style="color:#66d9ef">int</span>) <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">int</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span></code></pre></div><p>Node2D.gd 文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Node2D</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">_ready</span>():
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 调用上面 Utils.gd 中定义的静态方法</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> res <span style="color:#f92672">=</span> Utils<span style="color:#f92672">.</span><span style="color:#a6e22e">my_sum_func</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	print(<span style="color:#e6db74">&#34;x + y = &#34;</span>,res)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># 输出：x + y = 3</span>
+</span></span></code></pre></div><p><img src="/images/gdscript/gdscript_static_func.png" alt="图片" /></p>
 <h3 id="构建函数">
   构建函数
   <a class="anchor" href="#%e6%9e%84%e5%bb%ba%e5%87%bd%e6%95%b0">#</a>
@@ -706,11 +1037,19 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#枚举">枚举</a></li>
     <li><a href="#循环语句">循环语句</a></li>
-    <li><a href="#条件语句">条件语句</a></li>
-    <li><a href="#类型转换">类型转换</a></li>
-    <li><a href="#函数方法">函数/方法</a></li>
-    <li><a href="#对象和类">对象和类</a>
+    <li><a href="#条件语句">条件语句</a>
       <ul>
+        <li><a href="#if-语句">If 语句</a></li>
+        <li><a href="#match-语句">Match 语句</a></li>
+      </ul>
+    </li>
+    <li><a href="#类型转换">类型转换</a></li>
+    <li><a href="#类">类</a></li>
+    <li><a href="#函数方法">函数/方法</a>
+      <ul>
+        <li><a href="#引用函数">引用函数</a></li>
+        <li><a href="#lambda-函数">Lambda 函数</a></li>
+        <li><a href="#静态函数">静态函数</a></li>
         <li><a href="#构建函数">构建函数</a></li>
       </ul>
     </li>
