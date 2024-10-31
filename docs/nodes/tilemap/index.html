@@ -3,34 +3,27 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="
-  TileMap
-  #
-
-TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
+<meta name="description" content="TileMap#TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
 TileMap 需要内嵌一个 TileSet（见 TileSet 章节），可以理解为 TileMap 是一张画纸而 TileSet 是一个画笔，而在 TileSet 中添加的图集资源可以理解为颜料。
-
-  使用 TileMap
-  #
-
-给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。
+使用 TileMap#给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。
 设置 TileSet ：
-
-1、添加 TileSet。
-2、打开 TileSet 窗口，编辑 TileSet。
-3、导入图集资源。
-
-">
+1、添加 TileSet。 2、打开 TileSet 窗口，编辑 TileSet。 3、导入图集资源。 TileMap 绘制工具#点击右下角的 TileMap 打开编辑窗口，使用绘制工具就可以绘制场景了。
+工具栏有几个工具可以方便我们绘制场景。
+选择工具，可以框选多个图集（多选）。 单个绘制工具，在 TileMap 窗口（中下部分）选择你要绘制的图块，在 2D 窗口（中上部分）就可以绘制了。 直线绘制工具。 矩形绘制工具。 填充工具。这个工具会将某个区域填充成同一个图块。 选择工具。这个工具可以选择某个区域的图块，省的到 TileMap 窗口中选择了。 清除工具。清除已经绘制的部分。 随机图块。如果有一个草坪要绘制，然后有多种草的图块样式，就可以使用这个工具，他会随机在 TileMap 上绘制草，水机绘制看上去会更自然。 TileMap 多层#TileMap 支持多层，比如一个场景。第一层是土地，第二层是草地，第三层上放置一些时候。
+点击 TileMap ，在右侧的检查器窗口中 layers 属性中添加元素。然后再 TileMap 编辑窗口中可以选择不同的图层就可以在相应的图层上绘制了。">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="https://godotdoc.github.io/docs/nodes/tilemap/">
   <meta property="og:site_name" content="Godot Doc">
   <meta property="og:title" content="TileMap">
-  <meta property="og:description" content="TileMap#TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
+  <meta property="og:description" content="TileMap#TileMap 是用户创建游戏布局的图块网格。相比使用大量的 Sprite2D 布置场景，使用 TileMap 更方便游戏的性能也更好。可以将其理解为一个巨大的网格，这个网格中每个单元都可以放置不同的图块，以此来布置你的场景。
 TileMap 需要内嵌一个 TileSet（见 TileSet 章节），可以理解为 TileMap 是一张画纸而 TileSet 是一个画笔，而在 TileSet 中添加的图集资源可以理解为颜料。
 使用 TileMap#给 TileMap 设置完 TileSet 就可以在 TileMap 上绘制场景了。
 设置 TileSet ：
-1、添加 TileSet。 2、打开 TileSet 窗口，编辑 TileSet。 3、导入图集资源。 ">
+1、添加 TileSet。 2、打开 TileSet 窗口，编辑 TileSet。 3、导入图集资源。 TileMap 绘制工具#点击右下角的 TileMap 打开编辑窗口，使用绘制工具就可以绘制场景了。
+工具栏有几个工具可以方便我们绘制场景。
+选择工具，可以框选多个图集（多选）。 单个绘制工具，在 TileMap 窗口（中下部分）选择你要绘制的图块，在 2D 窗口（中上部分）就可以绘制了。 直线绘制工具。 矩形绘制工具。 填充工具。这个工具会将某个区域填充成同一个图块。 选择工具。这个工具可以选择某个区域的图块，省的到 TileMap 窗口中选择了。 清除工具。清除已经绘制的部分。 随机图块。如果有一个草坪要绘制，然后有多种草的图块样式，就可以使用这个工具，他会随机在 TileMap 上绘制草，水机绘制看上去会更自然。 TileMap 多层#TileMap 支持多层，比如一个场景。第一层是土地，第二层是草地，第三层上放置一些时候。
+点击 TileMap ，在右侧的检查器窗口中 layers 属性中添加元素。然后再 TileMap 编辑窗口中可以选择不同的图层就可以在相应的图层上绘制了。">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -38,9 +31,12 @@ TileMap 需要内嵌一个 TileSet（见 TileSet 章节），可以理解为 Til
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" >
 <link rel="canonical" href="https://godotdoc.github.io/docs/nodes/tilemap/">
-<link rel="stylesheet" href="/book.min.bdd0f5008df80fd5958c39d7b06f9d5256f38bea530fd74adcebbaab398f5936.css" integrity="sha256-vdD1AI34D9WVjDnXsG&#43;dUlbzi&#43;pTD9dK3Ou6qzmPWTY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.477b5d689613253ded65a67ac55c0e27a0481a7f9e26610766f89f331ed975ea.css" integrity="sha256-R3tdaJYTJT3tZaZ6xVwOJ6BIGn&#43;eJmEHZvifMx7Zdeo=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
   <script defer src="/zh-cn.search.min.1b46bc0465508644223af0f0821c782c68cc3980bd0dfcccfb1cca381797e7e3.js" integrity="sha256-G0a8BGVQhkQiOvDwghx4LGjMOYC9DfzM&#43;xzKOBeX5&#43;M=" crossorigin="anonymous"></script>
+
+  
+
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -445,7 +441,17 @@ https://github.com/alex-shpak/hugo-book
   data-loading="lazy"
   crossorigin="anonymous"
   async>
-</script></div>
+</script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?9843f76e61212dfb14392b2fd2ed57e6";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  </div>
   
  
 
